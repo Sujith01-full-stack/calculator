@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: rgb(255, 255, 255);
+            background: url("/calculater/pic\ 5.jpg");
+            background-size: cover;
+            padding: 40px;
+      }
+
+      .calc-box {
+        width: 350px;
+        background:transparent;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(255, 243, 8, 0.978);
+        border-radius: 10px;
+      }
+
+      table {
+        width: 100%;
+      }
+
+      input[type="text"] {
+        width: 95%;
+        padding: 6px;
+        margin: 5px 0;
+      }
+
+      button {
+        width: 70px;
+        padding: 8px;
+        color: rgb(5, 5, 5);
+        margin: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calc-box">
+      <h3>JavaScript Calculator</h3><center>Calculator</center>
+      <table>
+        <tr>
+  <td>
+    <label for="num1">Value 1</label>
+  </td>
+  <td>
+    <input type="text" id="num1" />
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <label for="num2">Value 2</label>
+  </td>
+  <td>
+    <input type="text" id="num2" />
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <label for="result">Result</label>
+  </td>
+  <td>
+    <input type="text" id="result" readonly />
+  </td>
+</tr>
+
+      </table>
+
+      <br />
+
+      <button onclick="add()">Add</button>
+      <button onclick="sub()">Sub</button>
+      <button onclick="mul()">Mul</button>
+      <button onclick="div()">Div</button>
+      <button onclick="cancel()">Clear</button>
+    </div>
+
+    <script>
+      function add() {
+        let a = parseInt(document.getElementById("num1").value);
+        let b = parseInt(document.getElementById("num2").value);
+        document.getElementById("result").value = a + b;
+      }
+
+      function sub() {
+        let a = parseInt(document.getElementById("num1").value);
+        let b = parseInt(document.getElementById("num2").value);
+        document.getElementById("result").value = a - b;
+      }
+
+      function mul() {
+        let a = parseInt(document.getElementById("num1").value);
+        let b = parseInt(document.getElementById("num2").value);
+        document.getElementById("result").value = a * b;
+      }
+
+      function div() {
+        let a = parseInt(document.getElementById("num1").value);
+        let b = parseInt(document.getElementById("num2").value);
+        if (b === 0) {
+          alert("Cannot divide by zero!");
+        } else {
+          document.getElementById("result").value = a / b;
+        }
+      }
+
+      function cancel() {
+        document.getElementById("num1").value = "";
+        document.getElementById("num2").value = "";
+        document.getElementById("result").value = "";
+      }
+    </script>
+  </body>
+</html>
